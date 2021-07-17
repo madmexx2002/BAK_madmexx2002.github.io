@@ -15,7 +15,7 @@ As you can see in the picture below, the corresponding shuttle control is update
 
 ![PopupLOV without Inputitem value](https://madmexx2002.github.io/assets/img/posts/popuplov_set_without_inputitem.png)
 
-The solution is very simple. Just set the display value, too.
+The solution is very simple when you know both values. Just set the display value, too.
 
 ```javascript
 $('#P20100_STRUCTURE_ID').val('I/PI-MA2 » I/PI-MA21');
