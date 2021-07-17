@@ -2,77 +2,31 @@
 layout: post
 title: Set Apex Popup LOV Item with Javascript
 subtitle: How to set the returning and display value of Item Popup LOV with Javascript
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
 tags: [apex, javascript]
 comments: true
 ---
 
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
-
-**Here is some bold text**
-
-## Here is a secondary heading
-
-Here's a useless table:
-
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
-
-
-How about a yummy crepe?
-
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
-
-It can also be centered!
-
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
+The returning value of a Popup LOV can be set with 
 ```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+apex.item('P20100_STRUCTURE_ID').setValue('10');
 ```
 
-And here is the same code yet again but with line numbers:
+As you can see in the picture below, the corresponding shuttle control is updated with the selected value of 10, but this **does not set the display value** either. The input element is still empty.
 
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
+![PopupLOV without Inputitem value](https://madmexx2002.github.io/assets/img/posts/popuplov_set_without_inputitem.png)
 
-## Boxes
-You can add notification, warning and error boxes like this:
+The solution is very simple. Just set the display value, too.
 
-### Notification
+```javascript
+$('#P20100_STRUCTURE_ID').val('I/PI-MA2 » I/PI-MA21');
+```
 
-{: .box-note}
-**Note:** This is a notification box.
+![PopupLOV without Inputitem value](https://madmexx2002.github.io/assets/img/posts/popuplov_set_inputitem.png)
 
-### Warning
+Now the display value is set right but the ui must be fixed to get the label over the value. Just add the class **js-show-label** to the container element from the Popup LOV item. Container elements always have the suffix **_CONTAINER**.
 
-{: .box-warning}
-**Warning:** This is a warning box.
+```javascript
+$("#P20100_STRUCTURE_ID_CONTAINER").addClass("js-show-label");
+```
 
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+![PopupLOV without Inputitem value](https://madmexx2002.github.io/assets/img/posts/popuplov_set.png)
