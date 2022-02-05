@@ -63,7 +63,7 @@ apex.jQuery('.ir-rowspan').each(function () {
 })    
 ```
 
-Or put the following code it in a JavaScript file and run only the function `rowSpan.init();` on page load
+Or put the following code in a JavaScript file and run only the function `rowSpan.init();` on page load
 
 ```javascript
 var rowSpan = rowSpan || [];
