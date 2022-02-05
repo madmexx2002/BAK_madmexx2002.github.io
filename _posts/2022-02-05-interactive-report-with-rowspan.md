@@ -90,3 +90,11 @@ rowSpan.init = function () {
 }
 ```
 
+If the grouped column is the first one in an IR this class has to be set, too. Else the border isn't shown correctly.
+
+```css
+.a-IRR-table tr td:first-child {
+    border-left-width: 1px;
+}
+```
+
