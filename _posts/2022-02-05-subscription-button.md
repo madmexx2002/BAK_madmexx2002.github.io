@@ -44,7 +44,7 @@ The only important thing is the Custom Attribute. Set the data-event attribute t
 
 After that we have to write an application process if we need this function on multiple pages or a page process. This process is of type Ajax-Callback. The button color and title could be set to your needs.
 
-```plsql
+```sql
 declare
   type T_EVENTS_TAB is
     table of SA_SUBSCRIPTION.EVENT%type;
