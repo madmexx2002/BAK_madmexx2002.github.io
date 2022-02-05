@@ -8,7 +8,7 @@ comments: true
 
 Let's take a look on the resulting Interactive Report (IR). Grouping is done on Field 1.
 
-![ir-with-rowspan](C:\Users\MarkL\OneDrive\Dokumente\GitHub\madmexx2002.github.io\_posts\2022-02-05-interactive-report-with-rowspan\ir-with-rowspan.png)
+![ir-with-rowspan](..\assets\img\posts\ir-with-rowspan.png)
 
 Setup a IR with the following sample query:
 
